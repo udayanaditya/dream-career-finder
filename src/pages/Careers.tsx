@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getAllCareers } from '@/utils/careerData';
+import { getAllCareers, getAvailableStreams } from '@/utils/careerData';
 import CareerCard from '@/components/CareerCard';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
 import PageWrapper from '@/components/PageWrapper';
@@ -17,9 +17,12 @@ const Careers = () => {
   const allCareers = getAllCareers();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedStream, setSelectedStream] = useState<string>('');
   const [showFilters, setShowFilters] = useState(false);
   
-  // Filter careers based on search term and selected tags
+  const streams = getAvailableStreams();
+  
+  // Filter careers based on search term, selected tags, and stream
   const filteredCareers = allCareers.filter(career => {
     const matchesSearch = 
       searchTerm === '' || 
@@ -30,7 +33,11 @@ const Careers = () => {
       selectedTags.length === 0 || 
       selectedTags.some(tag => career.tags.includes(tag));
     
-    return matchesSearch && matchesTags;
+    const matchesStream =
+      selectedStream === '' ||
+      career.stream === selectedStream;
+    
+    return matchesSearch && matchesTags && matchesStream;
   });
   
   const handleTagToggle = (tag: string) => {
@@ -40,10 +47,23 @@ const Careers = () => {
       setSelectedTags([...selectedTags, tag]);
     }
   };
+
+  const handleStreamSelect = (stream: string) => {
+    setSelectedStream(stream === selectedStream ? '' : stream);
+  };
   
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedTags([]);
+    setSelectedStream('');
+  };
+
+  const streamIcons: Record<string, string> = {
+    'Science': '🔬',
+    'Commerce': '💼',
+    'Arts': '🎨',
+    'Engineering': '⚙️',
+    'Medical': '🩺'
   };
 
   return (
@@ -75,7 +95,7 @@ const Careers = () => {
                   <SlidersHorizontal className="mr-2 h-4 w-4" />
                   Filter Options
                 </Button>
-                {(searchTerm || selectedTags.length > 0) && (
+                {(searchTerm || selectedTags.length > 0 || selectedStream) && (
                   <Button 
                     variant="ghost" 
                     onClick={clearFilters}
@@ -88,19 +108,38 @@ const Careers = () => {
               </div>
               
               {showFilters && (
-                <div className="pt-4 border-t border-white/10">
-                  <h3 className="font-medium mb-3 text-white">Filter by Tag:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {tagOptions.map(tag => (
-                      <Badge 
-                        key={tag}
-                        variant={selectedTags.includes(tag) ? "default" : "outline"}
-                        className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
-                        onClick={() => handleTagToggle(tag)}
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+                <div className="pt-4 border-t border-white/10 space-y-6">
+                  <div>
+                    <h3 className="font-medium mb-3 text-white">Filter by Stream:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {streams.map(stream => (
+                        <Badge 
+                          key={stream}
+                          variant={selectedStream === stream ? "default" : "outline"}
+                          className={`cursor-pointer ${selectedStream === stream ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
+                          onClick={() => handleStreamSelect(stream)}
+                        >
+                          <span className="mr-1">{streamIcons[stream] || '📚'}</span>
+                          {stream}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-medium mb-3 text-white">Filter by Tag:</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {tagOptions.map(tag => (
+                        <Badge 
+                          key={tag}
+                          variant={selectedTags.includes(tag) ? "default" : "outline"}
+                          className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
+                          onClick={() => handleTagToggle(tag)}
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
