@@ -5,6 +5,40 @@
 
 @layer base {
   :root {
+    /* Light theme variables */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 262 83% 28%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark theme variables */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -32,17 +66,6 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 262 83% 58%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 240 10% 3.9%;
-    --sidebar-foreground: 240 5% 84.9%; 
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 262 83% 58%;
   }
 }
 
@@ -52,28 +75,32 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
     scroll-behavior: smooth;
   }
 }
 
-/* Glass card effect */
+/* Glass card effect - light & dark modes */
 .glass-card {
   @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-xl;
+  @apply dark:bg-black/60 dark:backdrop-blur-md dark:border-white/5;
 }
 
-/* Glass nav effect */
+/* Glass nav effect - light & dark modes */
 .glass-nav {
-  @apply bg-black/60 backdrop-blur-md border-b border-white/10;
+  @apply bg-white/90 backdrop-blur-md border-b border-gray-200;
+  @apply dark:bg-black/60 dark:backdrop-blur-md dark:border-white/10;
 }
 
 .glass-footer {
-  @apply bg-black/60 backdrop-blur-md border-t border-white/10;
+  @apply bg-white/90 backdrop-blur-md border-t border-gray-200;
+  @apply dark:bg-black/60 dark:backdrop-blur-md dark:border-white/10;
 }
 
-/* Hero gradient */
+/* Hero gradient - light & dark modes */
 .hero-gradient {
-  background: linear-gradient(to right, rgba(139, 92, 246, 0.2), rgba(14, 165, 233, 0.2));
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.1), rgba(14, 165, 233, 0.1));
+  @apply dark:bg-gradient-to-r dark:from-purple-900/20 dark:to-blue-900/20;
 }
 
 /* Card hover effect */
@@ -87,7 +114,7 @@
   @apply animate-pulse-glow;
 }
 
-/* Text gradient effects */
+/* Text gradient effects - light & dark modes */
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-career-purple to-career-blue;
 }
@@ -95,3 +122,4 @@
 .text-gradient-reverse {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-career-blue to-career-purple;
 }
+

@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
   const location = useLocation();
@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 z-50">
+    <nav className="w-full bg-background border-b border-border shadow-sm fixed top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -32,7 +32,7 @@ const Navbar = () => {
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
             >
               Home
@@ -42,7 +42,7 @@ const Navbar = () => {
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/quiz' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
             >
               Take Quiz
@@ -52,11 +52,13 @@ const Navbar = () => {
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/careers' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
             >
               Explore Careers
             </Link>
+            
+            <ThemeSwitcher />
             
             {isLoggedIn ? (
               <Button variant="outline" className="ml-4">Logout</Button>
@@ -73,10 +75,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeSwitcher />
             <button 
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-career-purple focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-career-purple focus:outline-none"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -86,14 +89,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white pb-3 px-4 pt-2 animate-fade-in">
+        <div className="md:hidden bg-background pb-3 px-4 pt-2 animate-fade-in">
           <div className="space-y-1">
             <Link 
               to="/"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -104,7 +107,7 @@ const Navbar = () => {
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/quiz' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -115,7 +118,7 @@ const Navbar = () => {
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/careers' 
                   ? 'text-career-purple' 
-                  : 'text-gray-600 hover:text-career-purple'
+                  : 'text-foreground hover:text-career-purple'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
