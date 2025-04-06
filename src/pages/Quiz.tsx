@@ -1,12 +1,11 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import QuizQuestion from '@/components/QuizQuestion';
 import { Card, CardContent } from "@/components/ui/card";
 import { quizQuestions } from '@/utils/quizQuestions';
 import { careers } from '@/utils/careerData';
+import PageWrapper from '@/components/PageWrapper';
 
 const Quiz = () => {
   const navigate = useNavigate();
@@ -80,17 +79,16 @@ const Quiz = () => {
   const selectedAnswer = answers[currentQuestionIndex] || null;
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+      <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-center mb-8">Career Finder Quiz</h1>
-            <p className="text-center text-gray-600 mb-8">
+            <h1 className="text-3xl font-bold text-center mb-4 text-gradient">Career Finder Quiz</h1>
+            <p className="text-center text-gray-300 mb-8">
               Answer the following questions to discover career paths that align with your interests and strengths.
             </p>
             
-            <Card>
+            <Card className="glass-card border-white/10">
               <CardContent className="p-6">
                 <QuizQuestion
                   question={currentQuestion}
@@ -108,8 +106,7 @@ const Quiz = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

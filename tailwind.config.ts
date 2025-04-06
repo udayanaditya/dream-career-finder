@@ -110,13 +110,22 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 8px 2px rgba(139, 92, 246, 0.5)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 16px 4px rgba(139, 92, 246, 0.7)' 
+					},
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'fade-up': 'fade-up 0.5s ease-out'
+				'fade-up': 'fade-up 0.5s ease-out',
+				'pulse-glow': 'pulse-glow 2s infinite'
 			}
 		}
 	},

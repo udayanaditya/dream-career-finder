@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { login } from '@/utils/auth';
+import PageWrapper from '@/components/PageWrapper';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,14 +50,13 @@ const Login = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-16 flex flex-col justify-center">
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+      <div className="min-h-screen flex flex-col justify-center">
         <div className="container max-w-md mx-auto px-4 py-8">
-          <Card>
+          <Card className="glass-card border-white/10">
             <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl font-bold text-center">Login to Your Account</CardTitle>
-              <CardDescription className="text-center">
+              <CardTitle className="text-2xl font-bold text-center text-gradient">Login to Your Account</CardTitle>
+              <CardDescription className="text-center text-gray-300">
                 Enter your email and password to login
               </CardDescription>
             </CardHeader>
@@ -66,7 +64,7 @@ const Login = () => {
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-gray-200">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -75,12 +73,13 @@ const Login = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="password">Password</Label>
-                      <Link to="/forgot-password" className="text-sm text-career-purple hover:underline">
+                      <Label htmlFor="password" className="text-gray-200">Password</Label>
+                      <Link to="/forgot-password" className="text-sm text-career-purple hover:text-purple-400">
                         Forgot password?
                       </Link>
                     </div>
@@ -91,11 +90,12 @@ const Login = () => {
                       required
                       value={formData.password}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
                   
                   {error && (
-                    <div className="text-sm text-red-500 mt-2">
+                    <div className="text-sm text-red-400 mt-2">
                       {error}
                     </div>
                   )}
@@ -111,9 +111,9 @@ const Login = () => {
               </form>
             </CardContent>
             <CardFooter className="flex flex-col">
-              <div className="text-sm text-gray-500 text-center mt-2">
+              <div className="text-sm text-gray-400 text-center mt-2">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-career-purple hover:underline">
+                <Link to="/register" className="text-career-purple hover:text-purple-400">
                   Register
                 </Link>
               </div>
@@ -121,8 +121,7 @@ const Login = () => {
           </Card>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

@@ -1,5 +1,8 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import PageWrapper from "@/components/PageWrapper";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,15 +15,17 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80">
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center glass-card p-12 rounded-lg max-w-md">
+          <h1 className="text-7xl font-bold mb-4 text-gradient">404</h1>
+          <p className="text-xl text-gray-300 mb-8">Oops! We couldn't find the page you're looking for.</p>
+          <Button asChild className="bg-career-purple hover:bg-purple-700">
+            <a href="/">Return to Home</a>
+          </Button>
+        </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

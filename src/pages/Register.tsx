@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { register } from '@/utils/auth';
+import PageWrapper from '@/components/PageWrapper';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -61,14 +60,13 @@ const Register = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-16 flex flex-col justify-center">
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1510906594845-bc082582c8cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2044&q=80">
+      <div className="min-h-screen flex flex-col justify-center">
         <div className="container max-w-md mx-auto px-4 py-8">
-          <Card>
+          <Card className="glass-card border-white/10">
             <CardHeader className="space-y-1">
-              <CardTitle className="text-2xl font-bold text-center">Create an Account</CardTitle>
-              <CardDescription className="text-center">
+              <CardTitle className="text-2xl font-bold text-center text-gradient">Create an Account</CardTitle>
+              <CardDescription className="text-center text-gray-300">
                 Register to get personalized career recommendations
               </CardDescription>
             </CardHeader>
@@ -76,7 +74,7 @@ const Register = () => {
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name" className="text-gray-200">Full Name</Label>
                     <Input
                       id="name"
                       name="name"
@@ -84,11 +82,12 @@ const Register = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-gray-200">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -97,11 +96,12 @@ const Register = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password" className="text-gray-200">Password</Label>
                     <Input
                       id="password"
                       name="password"
@@ -109,11 +109,12 @@ const Register = () => {
                       required
                       value={formData.password}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="confirmPassword">Confirm Password</Label>
+                    <Label htmlFor="confirmPassword" className="text-gray-200">Confirm Password</Label>
                     <Input
                       id="confirmPassword"
                       name="confirmPassword"
@@ -121,11 +122,12 @@ const Register = () => {
                       required
                       value={formData.confirmPassword}
                       onChange={handleChange}
+                      className="bg-black/50 border-gray-700 text-white"
                     />
                   </div>
                   
                   {error && (
-                    <div className="text-sm text-red-500 mt-2">
+                    <div className="text-sm text-red-400 mt-2">
                       {error}
                     </div>
                   )}
@@ -141,9 +143,9 @@ const Register = () => {
               </form>
             </CardContent>
             <CardFooter className="flex flex-col">
-              <div className="text-sm text-gray-500 text-center mt-2">
+              <div className="text-sm text-gray-400 text-center mt-2">
                 Already have an account?{' '}
-                <Link to="/login" className="text-career-purple hover:underline">
+                <Link to="/login" className="text-career-purple hover:text-purple-400">
                   Login
                 </Link>
               </div>
@@ -151,8 +153,7 @@ const Register = () => {
           </Card>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

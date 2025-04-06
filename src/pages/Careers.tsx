@@ -1,13 +1,12 @@
 
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { getAllCareers, Career } from '@/utils/careerData';
+import { getAllCareers } from '@/utils/careerData';
 import CareerCard from '@/components/CareerCard';
 import { Search, SlidersHorizontal, X } from 'lucide-react';
+import PageWrapper from '@/components/PageWrapper';
 
 const tagOptions = [
   "tech", "science", "healthcare", "business", "creative", "engineering", 
@@ -48,17 +47,16 @@ const Careers = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80">
+      <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-3xl font-bold mb-2">Explore Careers</h1>
-            <p className="text-gray-600 mb-8">
+            <h1 className="text-3xl font-bold mb-2 text-gradient">Explore Careers</h1>
+            <p className="text-gray-300 mb-8">
               Browse through various career options to find detailed information about qualifications, skills, and growth opportunities.
             </p>
             
-            <div className="bg-white rounded-lg shadow p-6 mb-8">
+            <div className="glass-card rounded-lg p-6 mb-8">
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <div className="relative flex-grow">
                   <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
@@ -66,13 +64,13 @@ const Careers = () => {
                     placeholder="Search careers..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 bg-black/50 border-gray-700 text-white"
                   />
                 </div>
                 <Button 
                   variant="outline" 
                   onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center"
+                  className="flex items-center border-white/10 bg-black/30 hover:bg-black/50 text-white"
                 >
                   <SlidersHorizontal className="mr-2 h-4 w-4" />
                   Filter Options
@@ -81,7 +79,7 @@ const Careers = () => {
                   <Button 
                     variant="ghost" 
                     onClick={clearFilters}
-                    className="flex items-center text-gray-500"
+                    className="flex items-center text-gray-300 hover:text-white hover:bg-black/30"
                   >
                     <X className="mr-2 h-4 w-4" />
                     Clear
@@ -90,14 +88,14 @@ const Careers = () => {
               </div>
               
               {showFilters && (
-                <div className="pt-4 border-t">
-                  <h3 className="font-medium mb-3">Filter by Tag:</h3>
+                <div className="pt-4 border-t border-white/10">
+                  <h3 className="font-medium mb-3 text-white">Filter by Tag:</h3>
                   <div className="flex flex-wrap gap-2">
                     {tagOptions.map(tag => (
                       <Badge 
                         key={tag}
                         variant={selectedTags.includes(tag) ? "default" : "outline"}
-                        className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple' : ''}`}
+                        className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
                         onClick={() => handleTagToggle(tag)}
                       >
                         {tag}
@@ -115,17 +113,16 @@ const Careers = () => {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12">
-                <h3 className="text-xl font-semibold mb-2">No careers found</h3>
-                <p className="text-gray-600 mb-4">Try adjusting your search or filters</p>
+              <div className="text-center py-12 glass-card rounded-lg">
+                <h3 className="text-xl font-semibold mb-2 text-white">No careers found</h3>
+                <p className="text-gray-300 mb-4">Try adjusting your search or filters</p>
                 <Button onClick={clearFilters}>Clear All Filters</Button>
               </div>
             )}
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 
