@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import PageWrapper from '@/components/PageWrapper';
-import StreamSuggestions from '@/components/StreamSuggestions';
 import ContactForm from '@/components/ContactForm';
 
 const Index = () => {
@@ -43,12 +42,6 @@ const Index = () => {
               <Button asChild size="lg" className="premium-btn">
                 <a href="/quiz">Take Career Quiz</a>
               </Button>
-            </div>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="reveal reveal-delay-1">
-              <StreamSuggestions />
             </div>
           </div>
           

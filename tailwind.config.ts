@@ -26,23 +26,18 @@ export default {
 			colors: {
 				border: {
 					DEFAULT: 'hsl(var(--border))',
-					dark: 'hsl(var(--border-dark))'
 				},
 				input: {
 					DEFAULT: 'hsl(var(--input))',
-					dark: 'hsl(var(--input-dark))'
 				},
 				ring: {
 					DEFAULT: 'hsl(var(--ring))',
-					dark: 'hsl(var(--ring-dark))'
 				},
 				background: {
 					DEFAULT: 'hsl(var(--background))',
-					dark: 'hsl(var(--background-dark))'
 				},
 				foreground: {
 					DEFAULT: 'hsl(var(--foreground))',
-					dark: 'hsl(var(--foreground-dark))'
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
@@ -88,7 +83,7 @@ export default {
 					pink: '#D946EF',
 					orange: '#F97316',
 					green: '#10B981',
-					yellow: '#FEF7CD',
+					yellow: '#FFCC00',
 					gray: '#8E9196',
 				}
 			},
@@ -154,10 +149,10 @@ export default {
 				},
 				'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 8px 2px rgba(254, 247, 205, 0.5)' 
+						boxShadow: '0 0 8px 2px rgba(255, 204, 0, 0.5)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 16px 4px rgba(254, 247, 205, 0.7)' 
+						boxShadow: '0 0 16px 4px rgba(255, 204, 0, 0.7)' 
 					},
 				}
 			},
