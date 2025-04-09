@@ -19,8 +19,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-xl font-bold text-gradient mb-4 font-display">Career Navigator</h2>
-            <p className="text-gray-300 mb-4">
+            <h2 className="text-xl font-bold text-primary mb-4 font-display">Career Navigator</h2>
+            <p className="text-muted-foreground mb-4">
               Helping students find their perfect career path through personalized guidance and insights.
             </p>
             <div className="flex space-x-4 mb-4">
@@ -28,7 +28,7 @@ const Footer = () => {
                 onClick={scrollToContact} 
                 variant="outline" 
                 size="sm" 
-                className="flex items-center space-x-2 border-career-yellow/30 hover:bg-career-yellow/10"
+                className="flex items-center space-x-2 border-primary/30 hover:bg-primary/10"
               >
                 <Mail size={16} />
                 <span>Contact Us</span>
@@ -38,43 +38,43 @@ const Footer = () => {
                 onClick={scrollToContact} 
                 variant="outline" 
                 size="sm" 
-                className="flex items-center space-x-2 border-career-yellow/30 hover:bg-career-yellow/10"
+                className="flex items-center space-x-2 border-primary/30 hover:bg-primary/10"
               >
                 <MessageSquare size={16} />
                 <span>Send Message</span>
               </Button>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} Career Navigator. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm mt-2 flex items-center">
-              Developed with <Heart size={14} className="mx-1 text-career-yellow" /> by <span className="font-medium ml-1">Udayan Aditya & Krishna Jindal</span>
+            <p className="text-muted-foreground text-sm mt-2 flex items-center">
+              Developed with <Heart size={14} className="mx-1 text-secondary" /> by <span className="font-medium ml-1">Udayan Aditya & Krishna Jindal</span>
             </p>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Navigation</h3>
+            <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-career-yellow">Home</Link>
+                <Link to="/" className="text-muted-foreground hover:text-primary">Home</Link>
               </li>
               <li>
-                <Link to="/quiz" className="text-gray-400 hover:text-career-yellow">Take Quiz</Link>
+                <Link to="/quiz" className="text-muted-foreground hover:text-primary">Take Quiz</Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-400 hover:text-career-yellow">Explore Careers</Link>
+                <Link to="/careers" className="text-muted-foreground hover:text-primary">Explore Careers</Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Account</h3>
+            <h3 className="text-sm font-semibold text-foreground tracking-wider uppercase mb-4">Account</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/login" className="text-gray-400 hover:text-career-yellow">Login</Link>
+                <Link to="/login" className="text-muted-foreground hover:text-primary">Login</Link>
               </li>
               <li>
-                <Link to="/register" className="text-gray-400 hover:text-career-yellow">Register</Link>
+                <Link to="/register" className="text-muted-foreground hover:text-primary">Register</Link>
               </li>
             </ul>
           </div>

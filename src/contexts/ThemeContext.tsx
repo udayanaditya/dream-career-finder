@@ -2,13 +2,13 @@
 import React, { createContext, useContext } from 'react';
 
 interface ThemeContextType {
-  theme: 'light';
+  theme: 'dark';
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const theme = 'light';
+  const theme = 'dark';
 
   return (
     <ThemeContext.Provider value={{ theme }}>

@@ -7,28 +7,29 @@ interface PageWrapperProps {
   children: React.ReactNode;
   backgroundImage?: string;
   backgroundOverlay?: boolean;
-  darkOverlay?: boolean; // New prop for darker overlay
+  darkOverlay?: boolean;
+  hero?: boolean;
 }
 
 const PageWrapper = ({ 
   children, 
-  backgroundImage = "https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2333&q=80", 
+  backgroundImage = "/lovable-uploads/7d63c63f-f878-4842-8a33-471746a730f9.png", 
   backgroundOverlay = true,
-  darkOverlay = false
+  darkOverlay = true,
+  hero = false
 }: PageWrapperProps) => {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <div 
-        className="fixed inset-0 -z-10" 
-        style={{ 
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      />
       {backgroundOverlay && (
-        <div className={`fixed inset-0 ${darkOverlay ? 'bg-black/90' : 'bg-black/80'} -z-10`} />
+        <div 
+          className={`fixed inset-0 -z-10 ${hero ? 'hero-gradient' : ''}`} 
+          style={!hero ? { 
+            backgroundImage: `linear-gradient(to right, rgba(11, 27, 51, 0.95), rgba(11, 27, 51, 0.95)), url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          } : {}}
+        />
       )}
       <Navbar />
       <main className="flex-grow pt-16">

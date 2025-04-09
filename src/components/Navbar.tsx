@@ -1,8 +1,8 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from 'lucide-react';
-import ThemeSwitcher from './ThemeSwitcher';
 
 const Navbar = () => {
   const location = useLocation();
@@ -16,12 +16,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-background border-b border-border shadow-sm fixed top-0 z-50 transition-colors">
+    <nav className="w-full bg-background/90 backdrop-blur-md border-b border-border shadow-sm fixed top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-career-purple">Career Navigator</span>
+              <span className="text-2xl font-bold text-primary">Career Navigator</span>
             </Link>
           </div>
 
@@ -31,8 +31,8 @@ const Navbar = () => {
               to="/"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
             >
               Home
@@ -41,8 +41,8 @@ const Navbar = () => {
               to="/quiz"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/quiz' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
             >
               Take Quiz
@@ -51,14 +51,12 @@ const Navbar = () => {
               to="/careers"
               className={`px-3 py-2 rounded-md text-sm font-medium ${
                 location.pathname === '/careers' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
             >
               Explore Careers
             </Link>
-            
-            <ThemeSwitcher />
             
             {isLoggedIn ? (
               <Button variant="outline" className="ml-4">Logout</Button>
@@ -67,7 +65,7 @@ const Navbar = () => {
                 <Button asChild variant="outline">
                   <Link to="/login">Login</Link>
                 </Button>
-                <Button asChild>
+                <Button asChild className="premium-btn">
                   <Link to="/register">Register</Link>
                 </Button>
               </div>
@@ -75,11 +73,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeSwitcher />
+          <div className="md:hidden flex items-center">
             <button 
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-career-purple focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-primary focus:outline-none"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -95,8 +92,8 @@ const Navbar = () => {
               to="/"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -106,8 +103,8 @@ const Navbar = () => {
               to="/quiz"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/quiz' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -117,8 +114,8 @@ const Navbar = () => {
               to="/careers"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 location.pathname === '/careers' 
-                  ? 'text-career-purple' 
-                  : 'text-foreground hover:text-career-purple'
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -134,7 +131,7 @@ const Navbar = () => {
                 <Button asChild variant="outline" className="w-full">
                   <Link to="/login" onClick={() => setIsMenuOpen(false)}>Login</Link>
                 </Button>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full premium-btn">
                   <Link to="/register" onClick={() => setIsMenuOpen(false)}>Register</Link>
                 </Button>
               </div>
