@@ -49,7 +49,7 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   className="pl-10 bg-background/50 border-career-gray/30 focus:border-career-yellow/70"
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                 />
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
                   <MessageSquare size={16} />
