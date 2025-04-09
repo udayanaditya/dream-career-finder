@@ -31,6 +31,7 @@ const PageWrapper = ({
           } : {}}
         />
       )}
+      <div className="fixed inset-0 -z-20 bg-image-overlay" />
       <Navbar />
       <main className="flex-grow pt-16">
         {children}

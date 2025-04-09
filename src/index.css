@@ -95,7 +95,15 @@
   @apply bg-secondary/90 border border-secondary/30;
 }
 
-/* Hero gradient */
+/* Base background image across all pages */
+.bg-image-overlay {
+  background-image: url('/lovable-uploads/7d63c63f-f878-4842-8a33-471746a730f9.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15; /* Light overlay to keep the image subtle */
+}
+
+/* Hero gradient - will overlay on top of base background */
 .hero-gradient {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
               url('/lovable-uploads/7d63c63f-f878-4842-8a33-471746a730f9.png');
