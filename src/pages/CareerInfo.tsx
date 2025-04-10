@@ -1,8 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import PageWrapper from '@/components/PageWrapper';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,9 +39,8 @@ const CareerInfo = () => {
 
   if (!career) {
     return (
-      <>
-        <Navbar />
-        <div className="min-h-screen bg-gray-50 pt-24 pb-20 flex items-center justify-center">
+      <PageWrapper>
+        <div className="min-h-screen pt-24 pb-20 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-4">Career not found</h1>
             <Button asChild>
@@ -51,8 +48,7 @@ const CareerInfo = () => {
             </Button>
           </div>
         </div>
-        <Footer />
-      </>
+      </PageWrapper>
     );
   }
 
@@ -74,9 +70,8 @@ const CareerInfo = () => {
   };
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gray-50 pt-24 pb-20">
+    <PageWrapper>
+      <div className="min-h-screen pt-24 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
@@ -92,7 +87,7 @@ const CareerInfo = () => {
                   {career.icon}
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold">{career.title}</h1>
+                  <h1 className="text-3xl font-bold text-black">{career.title}</h1>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {career.tags.map((tag, index) => (
                       <Badge key={index} variant="secondary">{tag.replace('_', ' ')}</Badge>
@@ -112,7 +107,7 @@ const CareerInfo = () => {
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
                         <GraduationCap className="mr-2 h-5 w-5 text-career-purple" />
                         Education & Qualifications
                       </h3>
@@ -124,7 +119,7 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
                         <ListChecks className="mr-2 h-5 w-5 text-career-purple" />
                         Key Skills
                       </h3>
@@ -136,7 +131,7 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
                         <MapPin className="mr-2 h-5 w-5 text-career-purple" />
                         Work Environment
                       </h3>
@@ -144,7 +139,7 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
                         <BriefcaseBusiness className="mr-2 h-5 w-5 text-career-purple" />
                         Salary & Compensation
                       </h3>
@@ -152,7 +147,7 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
                         <LineChart className="mr-2 h-5 w-5 text-career-purple" />
                         Growth Outlook
                       </h3>
@@ -195,7 +190,7 @@ const CareerInfo = () => {
             
             {relatedCareers.length > 0 && (
               <div>
-                <h2 className="text-2xl font-bold mb-6">Similar Careers You Might Like</h2>
+                <h2 className="text-2xl font-bold mb-6 text-black">Similar Careers You Might Like</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {relatedCareers.map(relatedCareer => (
                     <CareerCard key={relatedCareer.id} career={relatedCareer} />
@@ -206,8 +201,7 @@ const CareerInfo = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+    </PageWrapper>
   );
 };
 

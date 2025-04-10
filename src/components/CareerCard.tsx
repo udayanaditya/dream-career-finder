@@ -42,7 +42,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
         <div className="flex justify-between items-start">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">{career.icon}</span>
-            <CardTitle className={isCompact ? 'text-lg' : 'text-xl'}>{career.title}</CardTitle>
+            <CardTitle className={`${isCompact ? 'text-lg' : 'text-xl'} text-black`}>{career.title}</CardTitle>
           </div>
           {matchPercentage && (
             <Badge variant="secondary" className="text-career-purple">
