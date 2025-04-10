@@ -5,34 +5,34 @@
 
 @layer base {
   :root {
-    /* Dark blue theme with teal and purple accents */
-    --background: 215 50% 10%;
+    /* Dark navy theme with purple and light blue accents (based on image) */
+    --background: 220 70% 10%; /* Deep navy blue */
     --foreground: 0 0% 100%;
 
-    --card: 215 50% 12%;
+    --card: 220 70% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 215 50% 15%;
+    --popover: 220 70% 15%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 183 100% 50%;
-    --primary-foreground: 215 50% 10%;
+    --primary: 180 75% 60%; /* Light blue accent from image */
+    --primary-foreground: 220 70% 10%;
 
-    --secondary: 280 70% 45%;
+    --secondary: 270 60% 45%; /* Purple accent from image */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 50% 20%;
+    --muted: 220 70% 20%;
     --muted-foreground: 215 10% 80%;
 
-    --accent: 183 100% 50%;
-    --accent-foreground: 215 50% 10%;
+    --accent: 180 75% 60%;
+    --accent-foreground: 220 70% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 50% 20%;
-    --input: 215 50% 20%;
-    --ring: 183 100% 50%;
+    --border: 220 70% 20%;
+    --input: 220 70% 20%;
+    --ring: 180 75% 60%;
 
     --radius: 0.5rem;
   }
@@ -97,16 +97,16 @@
 
 /* Base background image across all pages */
 .bg-image-overlay {
-  background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+  background-image: url('/lovable-uploads/04a305ea-73b6-4c4b-8f5f-118977d1a0c5.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.1; /* Light overlay to keep the image subtle */
+  opacity: 0.05; /* Very subtle overlay */
 }
 
 /* Hero gradient - will overlay on top of base background */
 .hero-gradient {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-              url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+  background: linear-gradient(to right, rgba(12, 25, 44, 0.9), rgba(12, 25, 44, 0.8)), 
+              url('/lovable-uploads/04a305ea-73b6-4c4b-8f5f-118977d1a0c5.png');
   background-size: cover;
   background-position: center;
 }
@@ -118,7 +118,7 @@
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px -5px rgba(52, 211, 235, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(77, 210, 255, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 /* Text gradient effects */

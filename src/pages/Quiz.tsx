@@ -79,12 +79,12 @@ const Quiz = () => {
   const selectedAnswer = answers[currentQuestionIndex] || null;
 
   return (
-    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+    <PageWrapper>
       <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold text-center mb-4 text-gradient">Career Finder Quiz</h1>
-            <p className="text-center text-gray-300 mb-8">
+            <p className="text-center text-white mb-8">
               Answer the following questions to discover career paths that align with your interests and strengths.
             </p>
             

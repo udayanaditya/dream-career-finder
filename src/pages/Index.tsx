@@ -56,7 +56,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-16 reveal">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white font-display">Find Your Perfect Career Path</h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-xl text-white/80 mb-8">
                 Discover career opportunities aligned with your interests, skills, and aspirations.
               </p>
               <div className="flex justify-center">
@@ -73,7 +73,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12 reveal">
               <h2 className="text-3xl font-bold mb-4 text-gradient font-display">Why Choose Us</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-white/80 max-w-2xl mx-auto">
                 We provide comprehensive career guidance to help you make informed decisions about your future.
               </p>
             </div>
@@ -90,7 +90,7 @@ const Index = () => {
                       {feature.title}
                     </h3>
                   </div>
-                  <p className={feature.color === 'purple' ? 'text-white/90' : 'text-muted-foreground'}>
+                  <p className={feature.color === 'purple' ? 'text-white/90' : 'text-white/80'}>
                     {feature.description}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ const Index = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12 reveal">
                 <h2 className="text-3xl font-bold mb-4 text-gradient font-display">Get In Touch</h2>
-                <p className="text-muted-foreground">Have questions or feedback? We'd love to hear from you.</p>
+                <p className="text-white/80">Have questions or feedback? We'd love to hear from you.</p>
               </div>
               <div className="reveal reveal-delay-2 glass-card p-8 rounded-lg">
                 <ContactForm />

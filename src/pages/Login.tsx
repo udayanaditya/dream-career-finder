@@ -50,13 +50,13 @@ const Login = () => {
   };
 
   return (
-    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+    <PageWrapper>
       <div className="min-h-screen flex flex-col justify-center">
         <div className="container max-w-md mx-auto px-4 py-8">
           <Card className="glass-card border-white/10">
             <CardHeader className="space-y-1">
               <CardTitle className="text-2xl font-bold text-center text-gradient">Login to Your Account</CardTitle>
-              <CardDescription className="text-center text-gray-300">
+              <CardDescription className="text-center text-white/80">
                 Enter your email and password to login
               </CardDescription>
             </CardHeader>
@@ -64,7 +64,7 @@ const Login = () => {
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-gray-200">Email</Label>
+                    <Label htmlFor="email" className="text-white">Email</Label>
                     <Input
                       id="email"
                       name="email"
@@ -73,13 +73,13 @@ const Login = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-black/50 border-gray-700 text-white"
+                      className="bg-black/50 border-white/20 text-white"
                     />
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <Label htmlFor="password" className="text-gray-200">Password</Label>
-                      <Link to="/forgot-password" className="text-sm text-career-purple hover:text-purple-400">
+                      <Label htmlFor="password" className="text-white">Password</Label>
+                      <Link to="/forgot-password" className="text-sm text-primary hover:text-primary/80">
                         Forgot password?
                       </Link>
                     </div>
@@ -90,7 +90,7 @@ const Login = () => {
                       required
                       value={formData.password}
                       onChange={handleChange}
-                      className="bg-black/50 border-gray-700 text-white"
+                      className="bg-black/50 border-white/20 text-white"
                     />
                   </div>
                   
@@ -102,7 +102,7 @@ const Login = () => {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-career-purple hover:bg-purple-700"
+                    className="w-full bg-secondary hover:bg-secondary/80"
                     disabled={isLoading}
                   >
                     {isLoading ? 'Logging in...' : 'Login'}
@@ -111,9 +111,9 @@ const Login = () => {
               </form>
             </CardContent>
             <CardFooter className="flex flex-col">
-              <div className="text-sm text-gray-400 text-center mt-2">
+              <div className="text-sm text-white/70 text-center mt-2">
                 Don't have an account?{' '}
-                <Link to="/register" className="text-career-purple hover:text-purple-400">
+                <Link to="/register" className="text-primary hover:text-primary/80">
                   Register
                 </Link>
               </div>

@@ -13,7 +13,7 @@ interface PageWrapperProps {
 
 const PageWrapper = ({ 
   children, 
-  backgroundImage = "/lovable-uploads/7d63c63f-f878-4842-8a33-471746a730f9.png", 
+  backgroundImage = "/lovable-uploads/04a305ea-73b6-4c4b-8f5f-118977d1a0c5.png", 
   backgroundOverlay = true,
   darkOverlay = true,
   hero = false
@@ -24,7 +24,7 @@ const PageWrapper = ({
         <div 
           className={`fixed inset-0 -z-10 ${hero ? 'hero-gradient' : ''}`} 
           style={!hero ? { 
-            backgroundImage: `linear-gradient(to right, rgba(11, 27, 51, 0.95), rgba(11, 27, 51, 0.95)), url(${backgroundImage})`,
+            backgroundImage: `linear-gradient(to right, rgba(10, 25, 50, 0.97), rgba(10, 25, 50, 0.97)), url(${backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',

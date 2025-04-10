@@ -37,14 +37,14 @@ const Results = () => {
   }).filter(Boolean);
 
   return (
-    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+    <PageWrapper>
       <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
               <div>
                 <h1 className="text-3xl font-bold mb-2 text-gradient">Your Career Matches</h1>
-                <p className="text-gray-300">
+                <p className="text-white mb-4">
                   Based on your answers, here are the careers that best match your profile.
                 </p>
               </div>
@@ -72,20 +72,20 @@ const Results = () => {
                       </div>
                       <div className="md:w-2/3">
                         <h3 className="text-lg font-semibold mb-2 text-white">{career.title}</h3>
-                        <p className="text-gray-300 mb-3">{career.description}</p>
+                        <p className="text-white mb-3">{career.description}</p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                           <div>
-                            <h4 className="font-medium text-sm text-gray-400 mb-1">Key Skills</h4>
-                            <ul className="list-disc list-inside text-sm text-gray-300">
+                            <h4 className="font-medium text-sm text-white/70 mb-1">Key Skills</h4>
+                            <ul className="list-disc list-inside text-sm text-white">
                               {career.skills.slice(0, 3).map((skill: string, index: number) => (
                                 <li key={index}>{skill}</li>
                               ))}
                             </ul>
                           </div>
                           <div>
-                            <h4 className="font-medium text-sm text-gray-400 mb-1">Education</h4>
-                            <ul className="list-disc list-inside text-sm text-gray-300">
+                            <h4 className="font-medium text-sm text-white/70 mb-1">Education</h4>
+                            <ul className="list-disc list-inside text-sm text-white">
                               {career.education.slice(0, 2).map((item: string, index: number) => (
                                 <li key={index}>{item}</li>
                               ))}
@@ -94,7 +94,7 @@ const Results = () => {
                         </div>
                         
                         <div className="flex justify-end">
-                          <Button asChild size="sm">
+                          <Button asChild size="sm" className="bg-primary hover:bg-primary/80">
                             <Link to={`/careers/${career.id}`}>
                               View Full Details
                             </Link>
@@ -115,7 +115,7 @@ const Results = () => {
                 </Link>
               </Button>
               
-              <Button asChild>
+              <Button asChild className="bg-secondary hover:bg-secondary/80">
                 <Link to="/careers">
                   Explore All Careers
                 </Link>
