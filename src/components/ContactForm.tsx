@@ -25,9 +25,17 @@ const ContactForm = () => {
     // In a real application, you would send this data to a server
     console.log('Form submitted:', formData);
     
+    // Send SMS via native SMS functionality
+    const phoneNumber = "+919386283361";
+    const message = `Message from ${formData.name} (${formData.email}): ${formData.message}`;
+    
+    // Use the SMS URL scheme to open the device's SMS app
+    const smsUrl = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
+    window.open(smsUrl);
+    
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      description: "Thank you for contacting us. We've opened your SMS app to send a message.",
     });
     
     // Reset form

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PageWrapper from '@/components/PageWrapper';
@@ -42,7 +43,7 @@ const CareerInfo = () => {
       <PageWrapper>
         <div className="min-h-screen pt-24 pb-20 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Career not found</h1>
+            <h1 className="text-2xl font-bold mb-4 text-black">Career not found</h1>
             <Button asChild>
               <Link to="/careers">Browse All Careers</Link>
             </Button>
@@ -100,7 +101,7 @@ const CareerInfo = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <Card className="md:col-span-2">
                 <CardHeader>
-                  <CardTitle>Overview</CardTitle>
+                  <CardTitle className="text-black">Overview</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700 mb-6">{career.description}</p>
@@ -160,7 +161,7 @@ const CareerInfo = () => {
               <div className="space-y-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Take Action</CardTitle>
+                    <CardTitle className="text-black">Take Action</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button className="w-full">Take Career Quiz</Button>
@@ -171,7 +172,7 @@ const CareerInfo = () => {
                 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Is This Right For You?</CardTitle>
+                    <CardTitle className="text-black">Is This Right For You?</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-700 mb-4">
