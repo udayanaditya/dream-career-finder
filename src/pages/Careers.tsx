@@ -67,12 +67,12 @@ const Careers = () => {
   };
 
   return (
-    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80">
+    <PageWrapper backgroundImage="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80">
       <div className="min-h-screen py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-3xl font-bold mb-2 text-gradient">Explore Careers</h1>
-            <p className="text-gray-300 mb-8">
+            <p className="text-white mb-8">
               Browse through various career options to find detailed information about qualifications, skills, and growth opportunities.
             </p>
             
@@ -116,7 +116,7 @@ const Careers = () => {
                         <Badge 
                           key={stream}
                           variant={selectedStream === stream ? "default" : "outline"}
-                          className={`cursor-pointer ${selectedStream === stream ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
+                          className={`cursor-pointer ${selectedStream === stream ? 'bg-career-purple text-white' : 'text-white border-white/60 hover:bg-white/20'}`}
                           onClick={() => handleStreamSelect(stream)}
                         >
                           <span className="mr-1">{streamIcons[stream] || '📚'}</span>
@@ -133,7 +133,7 @@ const Careers = () => {
                         <Badge 
                           key={tag}
                           variant={selectedTags.includes(tag) ? "default" : "outline"}
-                          className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple' : 'text-gray-300 border-white/20'}`}
+                          className={`cursor-pointer ${selectedTags.includes(tag) ? 'bg-career-purple text-white' : 'text-white border-white/60 hover:bg-white/20'}`}
                           onClick={() => handleTagToggle(tag)}
                         >
                           {tag}
@@ -154,7 +154,7 @@ const Careers = () => {
             ) : (
               <div className="text-center py-12 glass-card rounded-lg">
                 <h3 className="text-xl font-semibold mb-2 text-white">No careers found</h3>
-                <p className="text-gray-300 mb-4">Try adjusting your search or filters</p>
+                <p className="text-white mb-4">Try adjusting your search or filters</p>
                 <Button onClick={clearFilters}>Clear All Filters</Button>
               </div>
             )}

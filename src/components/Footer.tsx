@@ -25,10 +25,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 mb-4">
               <Button 
-                onClick={scrollToContact} 
                 variant="outline" 
                 size="sm" 
                 className="flex items-center space-x-2 border-primary/30 hover:bg-primary/10"
+                onClick={() => window.location.href = 'mailto:udayan.aditya@gmail.com'}
               >
                 <Mail size={16} />
                 <span>Contact Us</span>
