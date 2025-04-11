@@ -43,7 +43,7 @@ const CareerInfo = () => {
       <PageWrapper>
         <div className="min-h-screen pt-24 pb-20 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4 text-black">Career not found</h1>
+            <h1 className="text-2xl font-bold mb-4 text-white">Career not found</h1>
             <Button asChild>
               <Link to="/careers">Browse All Careers</Link>
             </Button>
@@ -88,7 +88,7 @@ const CareerInfo = () => {
                   {career.icon}
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-black">{career.title}</h1>
+                  <h1 className="text-3xl font-bold text-white">{career.title}</h1>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {career.tags.map((tag, index) => (
                       <Badge key={index} variant="secondary">{tag.replace('_', ' ')}</Badge>
@@ -99,20 +99,20 @@ const CareerInfo = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <Card className="md:col-span-2">
+              <Card className="md:col-span-2 bg-black border-gray-800">
                 <CardHeader>
-                  <CardTitle className="text-black">Overview</CardTitle>
+                  <CardTitle className="text-white">Overview</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 mb-6">{career.description}</p>
+                  <p className="text-white mb-6">{career.description}</p>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <GraduationCap className="mr-2 h-5 w-5 text-career-purple" />
                         Education & Qualifications
                       </h3>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                      <ul className="list-disc list-inside space-y-2 text-white">
                         {career.education.map((item, index) => (
                           <li key={index}>{item}</li>
                         ))}
@@ -120,11 +120,11 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <ListChecks className="mr-2 h-5 w-5 text-career-purple" />
                         Key Skills
                       </h3>
-                      <ul className="list-disc list-inside space-y-2 text-gray-700">
+                      <ul className="list-disc list-inside space-y-2 text-white">
                         {career.skills.map((skill, index) => (
                           <li key={index}>{skill}</li>
                         ))}
@@ -132,36 +132,36 @@ const CareerInfo = () => {
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <MapPin className="mr-2 h-5 w-5 text-career-purple" />
                         Work Environment
                       </h3>
-                      <p className="text-gray-700">{career.workEnvironment}</p>
+                      <p className="text-white">{career.workEnvironment}</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <BriefcaseBusiness className="mr-2 h-5 w-5 text-career-purple" />
                         Salary & Compensation
                       </h3>
-                      <p className="text-gray-700">{career.salary}</p>
+                      <p className="text-white">{career.salary}</p>
                     </div>
                     
                     <div>
-                      <h3 className="text-lg font-semibold flex items-center mb-3 text-black">
+                      <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <LineChart className="mr-2 h-5 w-5 text-career-purple" />
                         Growth Outlook
                       </h3>
-                      <p className="text-gray-700">{career.growthOutlook}</p>
+                      <p className="text-white">{career.growthOutlook}</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
               <div className="space-y-6">
-                <Card>
+                <Card className="bg-black border-gray-800">
                   <CardHeader>
-                    <CardTitle className="text-black">Take Action</CardTitle>
+                    <CardTitle className="text-white">Take Action</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button className="w-full">Take Career Quiz</Button>
@@ -170,15 +170,15 @@ const CareerInfo = () => {
                   </CardContent>
                 </Card>
                 
-                <Card>
+                <Card className="bg-black border-gray-800">
                   <CardHeader>
-                    <CardTitle className="text-black">Is This Right For You?</CardTitle>
+                    <CardTitle className="text-white">Is This Right For You?</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 mb-4">
+                    <p className="text-white mb-4">
                       This career might be a good fit if you:
                     </p>
-                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                    <ul className="list-disc list-inside space-y-2 text-white">
                       <li>Enjoy {career.traits.includes('creative') ? 'creative work' : career.traits.includes('technical') ? 'technical challenges' : 'solving problems'}</li>
                       <li>Have strong {career.traits.includes('analytical') ? 'analytical abilities' : career.traits.includes('interpersonal') ? 'people skills' : 'attention to detail'}</li>
                       <li>{career.traits.includes('high_learning') ? 'Love continuous learning' : 'Prefer mastering specific skills'}</li>
@@ -191,7 +191,7 @@ const CareerInfo = () => {
             
             {relatedCareers.length > 0 && (
               <div>
-                <h2 className="text-2xl font-bold mb-6 text-black">Similar Careers You Might Like</h2>
+                <h2 className="text-2xl font-bold mb-6 text-white">Similar Careers You Might Like</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {relatedCareers.map(relatedCareer => (
                     <CareerCard key={relatedCareer.id} career={relatedCareer} />
