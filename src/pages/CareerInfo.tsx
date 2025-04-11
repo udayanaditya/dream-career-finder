@@ -76,14 +76,14 @@ const CareerInfo = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="mb-6">
-              <Button asChild variant="outline" className="flex items-center mb-4">
+              <Button asChild variant="outline" className="flex items-center mb-4 hover-pop">
                 <Link to="/careers">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to All Careers
                 </Link>
               </Button>
 
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8 hover-glow p-4 rounded-lg transition-all">
                 <div className={`text-4xl p-4 rounded-lg ${getColorClass(career.color)}`}>
                   {career.icon}
                 </div>
@@ -99,7 +99,7 @@ const CareerInfo = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <Card className="md:col-span-2 bg-black border-gray-800">
+              <Card className="md:col-span-2 bg-black border-gray-800 hover-glow">
                 <CardHeader>
                   <CardTitle className="text-white">Overview</CardTitle>
                 </CardHeader>
@@ -107,7 +107,7 @@ const CareerInfo = () => {
                   <p className="text-white mb-6">{career.description}</p>
                   
                   <div className="space-y-6">
-                    <div>
+                    <div className="hover-pop p-4 rounded-lg">
                       <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <GraduationCap className="mr-2 h-5 w-5 text-career-purple" />
                         Education & Qualifications
@@ -119,7 +119,7 @@ const CareerInfo = () => {
                       </ul>
                     </div>
                     
-                    <div>
+                    <div className="hover-pop p-4 rounded-lg">
                       <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <ListChecks className="mr-2 h-5 w-5 text-career-purple" />
                         Key Skills
@@ -131,7 +131,7 @@ const CareerInfo = () => {
                       </ul>
                     </div>
                     
-                    <div>
+                    <div className="hover-pop p-4 rounded-lg">
                       <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <MapPin className="mr-2 h-5 w-5 text-career-purple" />
                         Work Environment
@@ -139,7 +139,7 @@ const CareerInfo = () => {
                       <p className="text-white">{career.workEnvironment}</p>
                     </div>
                     
-                    <div>
+                    <div className="hover-pop p-4 rounded-lg">
                       <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <BriefcaseBusiness className="mr-2 h-5 w-5 text-career-purple" />
                         Salary & Compensation
@@ -147,7 +147,7 @@ const CareerInfo = () => {
                       <p className="text-white">{career.salary}</p>
                     </div>
                     
-                    <div>
+                    <div className="hover-pop p-4 rounded-lg">
                       <h3 className="text-lg font-semibold flex items-center mb-3 text-white">
                         <LineChart className="mr-2 h-5 w-5 text-career-purple" />
                         Growth Outlook
@@ -159,18 +159,18 @@ const CareerInfo = () => {
               </Card>
               
               <div className="space-y-6">
-                <Card className="bg-black border-gray-800">
+                <Card className="bg-black border-gray-800 hover-pop">
                   <CardHeader>
                     <CardTitle className="text-white">Take Action</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <Button className="w-full">Take Career Quiz</Button>
-                    <Button variant="outline" className="w-full">Save This Career</Button>
-                    <Button variant="outline" className="w-full">Compare Careers</Button>
+                    <Button className="w-full pulse-glow">Take Career Quiz</Button>
+                    <Button variant="outline" className="w-full hover-glow">Save This Career</Button>
+                    <Button variant="outline" className="w-full hover-glow">Compare Careers</Button>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-black border-gray-800">
+                <Card className="bg-black border-gray-800 hover-pop">
                   <CardHeader>
                     <CardTitle className="text-white">Is This Right For You?</CardTitle>
                   </CardHeader>

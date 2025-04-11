@@ -36,7 +36,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
   };
 
   return (
-    <Card className={`overflow-hidden card-hover ${isCompact ? '' : 'h-full'}`}>
+    <Card className={`overflow-hidden hover-pop ${isCompact ? '' : 'h-full'}`}>
       <div className={`h-2 ${getColorClass(career.color)}`}></div>
       <CardHeader className={isCompact ? 'p-4' : 'p-6'}>
         <div className="flex justify-between items-start">
@@ -79,7 +79,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
       )}
 
       <CardFooter className={isCompact ? 'p-4' : 'p-6'}>
-        <Button asChild className="w-full">
+        <Button asChild className="w-full pulse-glow">
           <Link to={`/careers/${career.id}`} className="flex justify-center items-center">
             Learn More <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
